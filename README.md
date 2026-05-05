@@ -253,14 +253,3 @@ me to add it?"
 - **requests** (2.31.0+): OpenRouter inference client
 - **PyQt6** (6.11.0): GUI framework
 
-## License
-
-This project is provided as-is for educational and personal use.
-
-## Author
-
-Created as a comprehensive example of hybrid AI system architecture combining symbolic reasoning and neural networks.
-
----
-
-**Happy Gaming! 🎮**

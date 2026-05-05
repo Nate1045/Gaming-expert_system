@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+requirements.txt
+SETUP_GUIDE.py
+game_recommender/__pycache__/
+game_recommender/__init__.py
