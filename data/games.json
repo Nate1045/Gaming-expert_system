@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "genres": [
+      "Adventure",
+      "Action"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Medium",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "graphics_style": "Cartoon",
+    "game_length": "Long (30+ hours)",
+    "year": 2017,
+    "description": "Open-world action-adventure game"
+  },
+  {
+    "id": 2,
+    "name": "Elden Ring",
+    "genres": [
+      "RPG",
+      "Action"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "PlayStation",
+      "Xbox"
+    ],
+    "graphics_style": "Realistic",
+    "game_length": "Long (30+ hours)",
+    "year": 2022,
+    "description": "Action RPG with challenging combat"
+  },
+  {
+    "id": 3,
+    "name": "Portal 2",
+    "genres": [
+      "Puzzle"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Medium",
+    "platforms": [
+      "PC",
+      "PlayStation",
+      "Xbox"
+    ],
+    "graphics_style": "Realistic",
+    "game_length": "Medium (10-30 hours)",
+    "year": 2011,
+    "description": "First-person puzzle game"
+  },
+  {
+    "id": 4,
+    "name": "Super Smash Bros. Ultimate",
+    "genres": [
+      "Sports",
+      "Action"
+    ],
+    "multiplayer": "Local Co-op",
+    "difficulty": "Easy",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "graphics_style": "Cartoon",
+    "game_length": "Long (30+ hours)",
+    "year": 2018,
+    "description": "Fighting game with multiplayer focus"
+  },
+  {
+    "id": 5,
+    "name": "Civilization VI",
+    "genres": [
+      "Strategy"
+    ],
+    "multiplayer": "Online Multiplayer",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "PlayStation",
+      "Xbox"
+    ],
+    "graphics_style": "Cartoon",
+    "game_length": "Long (30+ hours)",
+    "year": 2016,
+    "description": "Turn-based strategy and civilization building"
+  },
+  {
+    "id": 6,
+    "name": "Hades",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation",
+      "Xbox",
+      "Mobile"
+    ],
+    "graphics_style": "Pixel Art",
+    "game_length": "Medium (10-30 hours)",
+    "year": 2020,
+    "description": "Roguelike dungeon crawler with dark theme"
+  },
+  {
+    "id": 7,
+    "name": "Stardew Valley",
+    "genres": [
+      "Simulation"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Easy",
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "Mobile",
+      "PlayStation"
+    ],
+    "graphics_style": "Pixel Art",
+    "game_length": "Long (30+ hours)",
+    "year": 2016,
+    "description": "Farming and life simulation game"
+  },
+  {
+    "id": 8,
+    "name": "Among Us",
+    "genres": [
+      "Strategy"
+    ],
+    "multiplayer": "Online Multiplayer",
+    "difficulty": "Easy",
+    "platforms": [
+      "PC",
+      "Mobile"
+    ],
+    "graphics_style": "Cartoon",
+    "game_length": "Short (< 10 hours)",
+    "year": 2018,
+    "description": "Social deduction party game"
+  },
+  {
+    "id": 9,
+    "name": "Resident Evil Village",
+    "genres": [
+      "Horror",
+      "Action"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "PlayStation",
+      "Xbox"
+    ],
+    "graphics_style": "Realistic",
+    "game_length": "Medium (10-30 hours)",
+    "year": 2021,
+    "description": "Survival horror game"
+  },
+  {
+    "id": 10,
+    "name": "Hollow Knight",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "Nintendo Switch"
+    ],
+    "graphics_style": "Pixel Art",
+    "game_length": "Medium (10-30 hours)",
+    "year": 2017,
+    "description": "Metroidvania-style action-adventure"
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "genres": [
+      "RPG",
+      "Action"
+    ],
+    "multiplayer": "Single-player",
+    "difficulty": "Hard",
+    "platforms": [
+      "PC",
+      "PlayStation",
+      "Xbox",
+      "Nintendo Switch"
+    ],
+    "graphics_style": "Realistic",
+    "game_length": "Long (30+ hours)",
+    "year": 2015,
+    "description": "Open-world action RPG with monster hunting",
+    "id": 11,
+    "added_date": "2026-05-05T16:26:33.649808"
+  }
+]
