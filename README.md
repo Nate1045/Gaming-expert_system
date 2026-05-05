@@ -145,42 +145,6 @@ This project currently uses OpenRouter for optional fallback recommendations.
 - Returns natural language game suggestions
 
 ---
-
-Enjoy the game recommender! 🎮
-
-- Mod support for PC players
-- 100+ hours of content
-
-This is not currently in our database. Would you like 
-me to add it?"
-```
-
-## Expert System Rules
-
-### Rule 1: Action Single-Player
-- Triggers: Action genre + Single-player
-- Effect: Filter for action single-player games
-
-### Rule 2: Challenging RPG
-- Triggers: RPG genre + Hard difficulty
-- Effect: Filter for challenging RPGs
-
-### Rule 3: Multiplayer Focus
-- Triggers: Local Co-op OR Online Multiplayer
-- Effect: Filter for multiplayer experiences
-
-### Rule 4: Puzzle Games
-- Triggers: Puzzle genre + (Easy OR Medium difficulty)
-- Effect: Filter for accessible puzzles
-
-### Rule 5: Short Sessions
-- Triggers: Short game length < 10 hours
-- Effect: Filter for quick-play games
-
-### Rule 6: Long-Form Experience
-- Triggers: Long game length 30+ hours
-- Effect: Filter for extended gaming experiences
-
 ## Troubleshooting
 
 ### LLM Features Not Working
