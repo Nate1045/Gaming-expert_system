@@ -32,9 +32,7 @@ This project includes:
 expert-system/
 ├── main.py
 ├── examples.py
-├── requirements.txt
 ├── README.md
-├── SETUP_GUIDE.py
 ├── data/
 │   └── games.json
 └── game_recommender/
@@ -77,13 +75,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure OpenRouter (optional)
+### 3. Configure OpenRouter (optional)
 
 OpenRouter is optional but recommended for fallback LLM recommendations.
 
@@ -109,7 +101,7 @@ Mac/Linux:
 export OPENROUTER_API_KEY="sk-or-v1-your-api-key-here"
 ```
 
-### 5. Run the application
+### 4. Run the application
 
 ```bash
 python main.py
@@ -142,6 +134,7 @@ The app uses `data/games.json` to store games. The knowledge base is auto-create
 - Among Us
 - Resident Evil Village
 - Hollow Knight
+- The Witcher 3: Wild Hunt
 
 ## LLM Integration
 
@@ -151,56 +144,7 @@ This project currently uses OpenRouter for optional fallback recommendations.
 - LLM fallback enabled via `OPENROUTER_API_KEY`
 - Returns natural language game suggestions
 
-## Notes
-
-- The app is now package-based, using `game_recommender.*` imports.
-- `main.py` remains the top-level entry point.
-- Root compatibility wrappers were removed for a cleaner layout.
-
-## Troubleshooting
-
-- `ModuleNotFoundError: experta` — activate the virtual environment and run: `pip install -r requirements.txt`
-- PyQt6 issues — ensure the installed version matches your Python interpreter
-- LLM fails — check that `OPENROUTER_API_KEY` is set correctly
-- Knowledge base save issues — confirm `data/` exists and is writable
-
 ---
-
-Enjoy the game recommender! 🎮
-
-- Mod support for PC players
-- 100+ hours of content
-
-This is not currently in our database. Would you like 
-me to add it?"
-```
-
-## Expert System Rules
-
-### Rule 1: Action Single-Player
-- Triggers: Action genre + Single-player
-- Effect: Filter for action single-player games
-
-### Rule 2: Challenging RPG
-- Triggers: RPG genre + Hard difficulty
-- Effect: Filter for challenging RPGs
-
-### Rule 3: Multiplayer Focus
-- Triggers: Local Co-op OR Online Multiplayer
-- Effect: Filter for multiplayer experiences
-
-### Rule 4: Puzzle Games
-- Triggers: Puzzle genre + (Easy OR Medium difficulty)
-- Effect: Filter for accessible puzzles
-
-### Rule 5: Short Sessions
-- Triggers: Short game length < 10 hours
-- Effect: Filter for quick-play games
-
-### Rule 6: Long-Form Experience
-- Triggers: Long game length 30+ hours
-- Effect: Filter for extended gaming experiences
-
 ## Troubleshooting
 
 ### LLM Features Not Working
