@@ -81,9 +81,7 @@ PROJECT STRUCTURE
 
 main.py                    - Entry point for the application
 examples.py                - Usage examples and programmatic usage
-requirements.txt           - Python package dependencies
 README.md                  - Project documentation
-SETUP_GUIDE.py             - This setup guide
 
 data/
   └── games.json           - Game knowledge base (auto-created)

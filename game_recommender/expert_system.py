@@ -1,10 +1,10 @@
 """
 Expert system for game recommendations using EXPERTA.
-Implements rules-based reasoning for game suggestions.
+Implements backward chaining for goal-directed reasoning.
 """
 import collections
 import collections.abc
-from experta import *
+from experta import KnowledgeEngine, Fact, Field, Rule, DefFacts, MATCH, AS
 from typing import List, Dict, Optional
 from .knowledge_base import GameKnowledgeBase
 
@@ -21,34 +21,67 @@ class UserPreferences(Fact):
 
 class GameRecommendation(Fact):
     """Fact representing a game recommendation."""
-    pass
+    game = Field(dict)
+
+
+class Goal(Fact):
+    """Goal fact for backward chaining."""
+    name = Field(str)
 
 
 class GameExpertSystem(KnowledgeEngine):
-    """Expert system for recommending games."""
+    """Expert system for recommending games using backward chaining."""
     
     def __init__(self, kb: GameKnowledgeBase):
         super().__init__()
         self.kb = kb
         self.recommendations = []
-        self.matched_games = []
     
     @DefFacts()
     def _initial_facts(self):
         """Initialize with game facts."""
         yield Fact(action="start")
     
-    @Rule(UserPreferences())
-    def process_preferences(self):
-        """Process user preferences."""
-        pass
+    @Rule(Goal(name='find_recommendation'))
+    def find_recommendation(self):
+        """Backward chaining rule to find recommendations when goal is set."""
+        # Get user preferences from facts
+        user_prefs = None
+        for fact in self.facts.values():
+            if isinstance(fact, UserPreferences):
+                user_prefs = fact
+                break
+        
+        if not user_prefs:
+            return
+        
+        preferences = {}
+        if 'genres' in user_prefs:
+            preferences['genres'] = user_prefs['genres']
+        if 'multiplayer' in user_prefs:
+            preferences['multiplayer'] = user_prefs['multiplayer']
+        if 'difficulty' in user_prefs:
+            preferences['difficulty'] = user_prefs['difficulty']
+        if 'platforms' in user_prefs:
+            preferences['platforms'] = user_prefs['platforms']
+        if 'graphics_style' in user_prefs:
+            preferences['graphics_style'] = user_prefs['graphics_style']
+        if 'game_length' in user_prefs:
+            preferences['game_length'] = user_prefs['game_length']
+        
+        # Perform knowledge base search
+        results = self.kb.search_games(preferences)
+        
+        # Declare recommendations as facts
+        for game in results[:5]:  # Limit to top 5
+            self.declare(GameRecommendation(game=game))
     
     def get_recommendations(self, preferences: Dict) -> List[Dict]:
         """
-        Get game recommendations based on user preferences.
+        Get game recommendations using backward chaining.
         
-        Uses expert system facts for tracking and performs
-        knowledge base search for matching games.
+        Declares a goal to find recommendations and lets the expert system
+        work backwards from the goal to find matching games.
         
         Args:
             preferences: Dictionary with keys like 'genres', 'multiplayer', 
@@ -57,7 +90,7 @@ class GameExpertSystem(KnowledgeEngine):
         Returns:
             List of recommended games (top 5).
         """
-        self.matched_games = []
+        self.recommendations = []
         
         try:
             # Reset and declare user preferences as facts
@@ -72,18 +105,24 @@ class GameExpertSystem(KnowledgeEngine):
             if fact_data:
                 self.declare(UserPreferences(**fact_data))
             
+            # Declare the goal to find recommendations (backward chaining trigger)
+            self.declare(Goal(name='find_recommendation'))
+            
+            # Run the expert system (backward chaining via goal)
             self.run()
+            
+            # Collect recommendations from facts
+            for fact in self.facts.values():
+                if isinstance(fact, GameRecommendation):
+                    self.recommendations.append(fact['game'])
+                    
         except Exception as e:
             print(f"Note: Expert system processing: {e}")
-        
-        # Perform actual game search based on preferences
-        results = self.kb.search_games(preferences)
-        self.matched_games.extend(results)
         
         # Remove duplicates while preserving order
         seen = set()
         unique_recommendations = []
-        for game in self.matched_games:
+        for game in self.recommendations:
             game_id = game.get("id")
             if game_id not in seen:
                 seen.add(game_id)
